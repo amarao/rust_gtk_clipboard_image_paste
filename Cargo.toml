@@ -1,0 +1,11 @@
+[package]
+name = "clip-test"
+version = "0.1.0"
+authors = ["George Shuklin <george.shuklin@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+gio = "0.6.0"
+gdk = "0.10.0"
+gtk = "0.6.0"
+gdk-pixbuf = "0.6.0"
