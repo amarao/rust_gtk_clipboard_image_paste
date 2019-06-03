@@ -6,6 +6,10 @@ edition = "2018"
 
 [dependencies]
 gio = "0.6.0"
-gdk = "0.10.0"
+#gdk = "0.10.0"
 gtk = "0.6.0"
 gdk-pixbuf = "0.6.0"
+cairo = "0.0.4"
+[dependencies.gdk]
+features = ["v3_16"]
+version = "0.10.0"
