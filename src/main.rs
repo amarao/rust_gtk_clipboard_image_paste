@@ -10,11 +10,7 @@ use gio::prelude::*;
 use std::env;
 // use cairo::{Context, Format, ImageSurface};
 
-fn main() {
-    let uiapp = gtk::Application::new("org.example.clipboard.ops",
-                                      gio::ApplicationFlags::FLAGS_NONE)
-                                 .expect("Application::new failed");
-    uiapp.connect_activate(|app| {
+fn app( app:&gtk::Application) {
         // We create the main window.
         let win = gtk::ApplicationWindow::new(app);
 
@@ -38,6 +34,12 @@ fn main() {
             pixbuf.put_pixel(i, i, 0x00, 0x90, 0x10, 0x00);
         }
         clipboard.set_image(&pixbuf);
-    });
+}
+
+fn main() {
+    let uiapp = gtk::Application::new("org.example.clipboard.ops",
+                                      gio::ApplicationFlags::FLAGS_NONE)
+                                 .expect("Application::new failed");
+    uiapp.connect_activate(app);
     uiapp.run(&env::args().collect::<Vec<_>>());
 }
